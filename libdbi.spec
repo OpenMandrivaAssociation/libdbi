@@ -1,14 +1,15 @@
 %define	major 0
-%define libname	%mklibname dbi %{major}
+%define libname %mklibname dbi %{major}
+%define develname %mklibname dbi -d
 
 Summary:	Database Independent Abstraction Layer for C
 Name:		libdbi
-Version:	0.8.1
+Version:	0.8.2
 Release:	%mkrel 1
 License:	LGPL
 Group:		System/Libraries
 URL:		http://libdbi.sourceforge.net/
-Source0:	http://prdownloads.sourceforge.net/libdbi/%{name}-%{version}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/libdbi/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
@@ -29,13 +30,15 @@ code, programmers can leverage the power of multiple databases and
 multiple simultaneous database connections by using this
 framework.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Library and header files for the %{name} library
 Group:		Development/C
 Provides:	%{name}-devel = %{version}
+Provides:	dbi-devel = %{version}
 Requires:	%{libname} = %{version}
+Obsoletes:	%{mklibname dbi 0 -d}
 
-%description -n		%{libname}-devel
+%description -n	%{develname}
 libdbi implements a database-independent abstraction layer in C,
 similar to the DBI/DBD layer in Perl. Writing one generic set of
 code, programmers can leverage the power of multiple databases and
@@ -75,12 +78,10 @@ rm -rf %{buildroot}%{_docdir}
 %doc AUTHORS ChangeLog INSTALL README
 %{_libdir}/*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc README TODO doc/programmers-guide doc/driver-guide doc/*.pdf
 %{_includedir}/dbi
 %{_libdir}/*.so
 %{_libdir}/*.la
 %{_libdir}/*.a
-
-
