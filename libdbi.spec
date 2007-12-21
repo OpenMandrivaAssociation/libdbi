@@ -10,6 +10,7 @@ License:	LGPL
 Group:		System/Libraries
 URL:		http://libdbi.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/libdbi/%{name}-%{version}.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 libdbi implements a database-independent abstraction layer in C,
