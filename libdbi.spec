@@ -12,6 +12,7 @@ URL:		http://libdbi.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/libdbi/%{name}-%{version}.tar.gz
 BuildRequires:	openjade
 BuildRequires:	docbook-style-dsssl
+BuildRequires:	docbook-dtd41-sgml
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
