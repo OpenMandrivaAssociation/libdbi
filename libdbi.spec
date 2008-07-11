@@ -5,7 +5,7 @@
 Summary:	Database Independent Abstraction Layer for C
 Name:		libdbi
 Version:	0.8.3
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	LGPL
 Group:		System/Libraries
 URL:		http://libdbi.sourceforge.net/
@@ -61,7 +61,7 @@ find -type d | xargs chmod 755
 %make
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall_std
 
@@ -77,7 +77,7 @@ rm -rf %{buildroot}%{_docdir}
 %endif
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
