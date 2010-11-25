@@ -5,7 +5,7 @@
 Summary:	Database Independent Abstraction Layer for C
 Name:		libdbi
 Version:	0.8.3
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	LGPL
 Group:		System/Libraries
 URL:		http://libdbi.sourceforge.net/
