@@ -1,11 +1,11 @@
-%define	major 0
+%define	major 1
 %define libname %mklibname dbi %{major}
 %define develname %mklibname dbi -d
 
 Summary:	Database Independent Abstraction Layer for C
 Name:		libdbi
-Version:	0.8.3
-Release:	%mkrel 5
+Version:	0.8.4
+Release:	%mkrel 1
 License:	LGPL
 Group:		System/Libraries
 URL:		http://libdbi.sourceforge.net/
@@ -82,7 +82,7 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog INSTALL README
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
