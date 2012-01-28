@@ -5,7 +5,7 @@
 Summary:	Database Independent Abstraction Layer for C
 Name:		libdbi
 Version:	0.8.4
-Release:	%mkrel 2
+Release:	3
 License:	LGPL
 Group:		System/Libraries
 URL:		http://libdbi.sourceforge.net/
@@ -13,7 +13,6 @@ Source0:	http://prdownloads.sourceforge.net/libdbi/%{name}-%{version}.tar.gz
 BuildRequires:	openjade
 BuildRequires:	docbook-style-dsssl
 BuildRequires:	docbook-dtd41-sgml
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 libdbi implements a database-independent abstraction layer in C, similar to the
@@ -68,26 +67,14 @@ rm -rf %{buildroot}
 # nuke installed docs...
 rm -rf %{buildroot}%{_docdir}
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
+# cleanups
+rm -f %{buildroot}%{_libdir}/*.*a
 
 %files -n %{libname}
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog INSTALL README
 %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root)
 %doc README TODO doc/programmers-guide doc/driver-guide doc/*.pdf
 %{_includedir}/dbi
 %{_libdir}/*.so
-%{_libdir}/*.la
-%{_libdir}/*.a
