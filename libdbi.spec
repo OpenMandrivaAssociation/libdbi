@@ -1,6 +1,7 @@
 %define major 1
 %define libname %mklibname dbi %{major}
 %define develname %mklibname dbi -d
+%define debug_package          %{nil}
 
 Summary:	Database Independent Abstraction Layer for C
 Name:		libdbi
@@ -57,7 +58,7 @@ find -type d | xargs chmod 755
 %make
 
 %install
-%makeinstall_std STRIP=/bin/true
+%makeinstall_std 
 
 # nuke installed docs...
 rm -rf %{buildroot}%{_docdir}
