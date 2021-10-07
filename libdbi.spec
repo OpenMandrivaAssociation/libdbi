@@ -1,4 +1,3 @@
-%define debug_package	%{nil}
 %define major	1
 %define libname %mklibname dbi %{major}
 %define devname %mklibname dbi -d
@@ -48,12 +47,11 @@ This package contains the development library and header files.
 find -type d | xargs chmod 755
 
 %build
-%configure2_5x --disable-static
-
-%make
+%configure
+%make_build
 
 %install
-%makeinstall_std 
+%make_install
 
 # nuke installed docs...
 rm -rf %{buildroot}%{_docdir}
@@ -67,4 +65,3 @@ rm -rf %{buildroot}%{_docdir}
 %{_includedir}/dbi
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
-
