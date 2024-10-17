@@ -8,7 +8,7 @@ Version:	0.9.0
 Release:	12
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://libdbi.sourceforge.net/
+Url:		https://libdbi.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/libdbi/%{name}-%{version}.tar.gz
 BuildRequires:	docbook-style-dsssl
 BuildRequires:	docbook-dtd41-sgml
