@@ -10,6 +10,11 @@ License:	LGPLv2
 Group:		System/Libraries
 Url:		https://libdbi.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/libdbi/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	docbook-style-dsssl
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	openjade
